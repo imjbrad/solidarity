@@ -2554,8 +2554,7 @@ html, body {
       display: block; }
     #photo-space #photos .photo {
       float: left;
-      margin-right: 10px;
-      border: 1px dotted #d8d8d8; }
+      margin-right: 10px; }
       #photo-space #photos .photo:last-of-type {
         margin-right: 0; }
   #photo-space #doneButton {

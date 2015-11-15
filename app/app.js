@@ -13,6 +13,6 @@ angular.module('app', [
   $stateProvider
       .state('home', {
         url: "",
-        templateUrl: "home/views.home.tpl.html"
+        templateUrl: "app/home/views.home.tpl.html"
       })
 });

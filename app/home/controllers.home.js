@@ -13,17 +13,17 @@ angular.module('app.controllers.home', [])
 
         $scope.overlays = [
             {
-                src: "assets/filter.png",
+                src: "app/assets/filter.png",
                 title: "Paris Attacks",
                 htmlDescription: $sce.trustAsHtml("This is a description <br> describing somthing")
             },
             {
-                src: "assets/blm.png",
+                src: "app/assets/blm.png",
                 title: "Black Lives Matter",
                 htmlDescription: $sce.trustAsHtml("This is a description <br> describing somthing")
             },
             {
-                src: "assets/japan.png",
+                src: "app/assets/japan.png",
                 title: "Wale Crisis",
                 htmlDescription: $sce.trustAsHtml("This is a description <br> describing somthing")
             }
@@ -155,11 +155,11 @@ angular.module('app.controllers.home', [])
             }
         }
 
-        function checkLoginState() {
+        window.checkLoginState = function() {
             FB.getLoginStatus(function(response) {
                 statusChangeCallback(response);
             });
-        }
+        };
 
         window.fbAsyncInit = function() {
             FB.init({
