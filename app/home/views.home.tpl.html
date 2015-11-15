@@ -1,0 +1,39 @@
+<div class="home" ng-controller="HomeController">
+
+    <div id="side-bar">
+        <div class="title-block">
+                The Click Solidarity Project
+        </div>
+        <div class="regular-block">
+            Log in with Facebook, then select an overlay to show support of causes that are important to you.
+            <div>
+                <fb:login-button id="fb-login-button" scope="public_profile, email, publish_actions" onlogin="checkLoginState();">
+                </fb:login-button>
+            </div>
+        </div>
+        <div id="overlay-space">
+            <div id="overlays">
+                <div class="overlay" ng-click="selectFilter($index)" ng-class="{'selected': $index == currentOverlay}"ng-repeat="overlay in overlays">
+                    <img class="overlay-image" ng-src="{{ overlay.src }}">
+                    <div class="overlay-description">
+                        <div class="overlay-title">{{ overlay.title }}</div>
+                        <div class="overlay-description-text" ng-bind-html="overlay.htmlDescription"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="photo-space">
+        <div id="photos">
+            <img id="profile_pic" class="photo">
+            <canvas id="canvas" class="photo"></canvas>
+        </div>
+        <button id="doneButton" ng-click="complete()">
+            <span ng-show="!status">Finish</span>
+            <span ng-show="status=='pending'">Applying Overlay...</span>
+            <span ng-show="status=='redirecting'">Redirecting to Facebook....</span>
+        </button>
+    </div>
+
+</div>
